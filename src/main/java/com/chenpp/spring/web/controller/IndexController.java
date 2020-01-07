@@ -32,6 +32,13 @@ public class IndexController {
 	public String getName(String name){
 		return "My Name is "+ name;
 	}
+
+	//这里使用的是贪婪匹配 表示匹配以/cp/query开头的url
+	@CPRequestMapping("/query.*")
+	@CPResponseBody
+	public String query(String param){
+		return "The query param  is "+ param;
+	}
 	
 	
 }
